@@ -2,8 +2,8 @@ import React from "react";
 
 const AboutBody = () => {
   return (
-    <div className="bg-black text-white py-12 px-6">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
+    <div className="bg-slate-900 text-white py-12 px-6">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
         {/* Image Section */}
         <div className="grid grid-cols-2 gap-4">
           <img
@@ -30,13 +30,13 @@ const AboutBody = () => {
         {/* Text Section */}
         <div className="flex flex-col ">
           <h2 className="text-4xl font-bold mb-4">About Us</h2>
-          <h4 className="mb-4 font-normal text-[14px]">
+          <p className="mb-4 font-normal text-[14px] text-yellow-100">
             From the moment you walk through the door you know Gymbase is a
             unique place. We created Gymbase to provide members with the most
             effective tools for success. This meant offering classes for
             children and adults and providing a welcoming atmosphere for all.
-          </h4>
-          <p className="font-normal text-[14px]">When we created Gym Base, we knew we wanted to be more than just a simple gym. 
+          </p>
+          <p className="font-normal text-[14px] text-yellow-100">When we created Gym Base, we knew we wanted to be more than just a simple gym. 
             Having worked in traditional gyms in the past, we knew we needed to create a
              concept that would provide our members with the most effective tools for success.
               This meant we needed to offer a wide range of classes both for children and adults.
@@ -48,15 +48,15 @@ const AboutBody = () => {
           <div className="grid grid-cols-3 gap-4  mt-6">
             <div>
               <h3 className="text-sm font-semibold">Environment</h3>
-              <p className="text-lg">Clean and Airy</p>
+              <p className="text-lg text-yellow-100">Clean and Airy</p>
             </div>
             <div>
               <h3 className="text-sm font-semibold">Classes</h3>
-              <p className="text-lg">Every Level</p>
+              <p className="text-lg text-yellow-100">Every Level</p>
             </div>
             <div>
               <h3 className="text-sm font-semibold">Prices</h3>
-              <p className="text-lg">Affordable</p>
+              <p className="text-lg text-yellow-100">Affordable</p>
             </div>
           </div>
         </div>
