@@ -2,7 +2,7 @@ import ClassSlider from "./ClassSlider/ClassSlider";
 
 const Our_Classes = ()=>{
     return(
-        <div className="py-20 bg-slate-700">
+        <div className="py-20 bg-slate-900">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center text-white relative">
                     <h2 className="text-3xl font-semibold mb-7">Our Class</h2>

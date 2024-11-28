@@ -9,38 +9,38 @@ const ClassSlider = () => {
     {
       id: 1,
       backgroundImage: "https://i.ibb.co/dghN6nd/pexels-823sl-2294361.jpg",
-      title: "For people who create fun and support experience",
-      description: "Best Selling Gym",
+      title: "Active Adults",
+      description: "strength, speed, stamina",
     },
     {
       id: 2,
       backgroundImage: "https://i.ibb.co/XJrHmLz/pexels-pixabay-416778.jpg",
-      title: "For people who create fun and support experience",
-      description: "Partner with us for innovative solutions that deliver results.",
+      title: "Active Kids",
+      description: "strength, speed, stamina",
     },
     {
       id: 3,
       backgroundImage: "https://i.ibb.co/N2VtZCx/pexels-victorfreitas-841130.jpg",
-      title: "For people who create fun and support experience",
-      description: "Empowering businesses to achieve their fullest potential.",
+      title: "Body Attack",
+      description: "the power pusher",
     },
     {
       id: 4,
       backgroundImage: "https://i.ibb.co.com/Ryt0TKL/pexels-tima-miroshnichenko-5928258.jpg",
-      title: "For People who create fun and support experience",
-      description: "Empowering business to achieve their fullest potential",
+      title: "Cardio Fitness",
+      description: "cardiovascular training",
     },
     {
       id: 5,
       backgroundImage: "https://i.ibb.co.com/RTbQyBy/pexels-yankrukov-8436605.jpg",
-      title: "For people who create fun and support experience",
-      description: "Empowering business to achieve their fullest potential",
+      title: "Cycle Trining",
+      description: "indoor cycling class",
     },
     {
       id: 6,
       backgroundImage: "https://i.ibb.co.com/yWd4C9j/pexels-pixabay-69773.jpg",
-      title: "For people who create fun and support experience",
-      description: "Empowering business to achieve their fullest potential",
+      title: "Yoga Plaites",
+      description: "relax, detoxification",
     },
   ];
 
@@ -80,14 +80,14 @@ const ClassSlider = () => {
               height: "300px",
             }}
           >
-            <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-            <div className="absolute bottom-0 left-0 transition z-10 text-white p-4 hover:bg-lime-500">
-                <div className="flex gap-5 items-center">
+            <div className="absolute inset-0 bg-slate-400 bg-opacity-20"></div>
+            <div className="absolute w-full bottom-0 left-0 transition z-10 text-white p-4 hover:bg-lime-500">
+                <div className="flex gap-5 items-center justify-between">
                     <div>
                     <h2 className="text-xl font-bold">{slide.title}</h2>
                     <p className="text-sm">{slide.description}</p>
                     </div>
-                    <div>
+                    <div className="">
                     <Link to="" className="text-3xl font-bold text-white"><FaArrowRight></FaArrowRight></Link>
                     </div>
                 </div>
