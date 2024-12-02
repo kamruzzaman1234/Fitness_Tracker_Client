@@ -1,13 +1,13 @@
 const TestomonialCard = ()=>{
     return(
         <div>
-                 <div className="flex items-center justify-center min-h-screen bg-gray-900">
+        <div className="flex items-center justify-center min-h-screen bg-gray-900">
       <div className="bg-gray-800 text-white p-8 rounded-lg shadow-lg w-96">
         <div className="flex flex-col items-center">
           {/* Profile Image */}
           <div className="w-24 h-24 rounded-full overflow-hidden mb-4">
             <img
-              src="https://via.placeholder.com/150"
+              src="https://i.ibb.co.com/ZKS4RMV/pexels-olly-846741.jpg"
               alt="Profile"
               className="w-full h-full object-cover"
             />

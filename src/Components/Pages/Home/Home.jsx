@@ -1,6 +1,7 @@
 import AboutBody from "./AboutBody/AboutBody";
 import Banner from "./Banner/Banner";
 import BodyIndex from "./BodyIndex/BodyIndex";
+import BrandArea from "./BrandArea/BrandArea";
 import ExerciseDetails from "./ExerciseDetails/ExerciseDetails";
 import GymServices from "./GymServices/GymServices";
 import GymTime from "./GymTime/GymTime";
@@ -26,6 +27,7 @@ const Home = ()=>{
             <BodyIndex></BodyIndex>
             <GymServices></GymServices>
             <TestomonialCard></TestomonialCard>
+            <BrandArea></BrandArea>
         </div>
     )
 }
