@@ -19,7 +19,7 @@ const GymServices = () => {
         }}
       >
         <div className="absolute inset-0 bg-black opacity-80 z-0"></div>
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-8 lg:mx-auto">
           <div className="text-center text-white relative">
             <h2 className="text-3xl font-semibold mb-7">Not Only a Gym</h2>
             <p className="text-gray-50">
@@ -30,7 +30,7 @@ const GymServices = () => {
             <div className="absolute top-11 bg-lime-400 w-[70px] h-[5px] mx-auto left-[47.5%]"></div>
           </div>
           <div className="mt-10 z-20 relative">
-                <div className="grid grid-cols-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                     <div className="border-2 border-lime-200 transition hover:bg-lime-500 px-10 py-6">
                         <IoMdStopwatch className="text-[40px] text-white mb-10"></IoMdStopwatch>
                         <div className="text-white flex justify-between gap-8">

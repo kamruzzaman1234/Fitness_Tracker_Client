@@ -4,9 +4,9 @@ import { FaUserClock } from "react-icons/fa";
 const GymTime = ()=>{
     return(
         <div className="-mt-[100px] z-20 relative ">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-8 lg:mx-auto">
                 <div className="">
-                    <div className="grid grid-cols-3">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-0">
                         <div className="bg-white px-6 py-4">
                              <div>
                              <h2 className="text-2xl font-semibold ">Upcoming Classes</h2>
@@ -39,7 +39,7 @@ const GymTime = ()=>{
                              for a 20% off your introductory training session.</p>
                         </div>
                         <div className="border-2 border-white hover:bg-white mt-3
-                         text-white hover:text-black px-4 py-2 w-[60%]">
+                         text-white hover:text-black px-8 lg:px-4 py-2 w-[60%]">
                             <Link className="">VIEW CLASS SCHEDULE</Link>
                         </div>
                         </div>

@@ -5,9 +5,9 @@ import { BsBuildingDash } from "react-icons/bs";
 const ExerciseDetails = ()=>{
     return(
         <div className="">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-8 lg:mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div className="grid grid-cols-2 gap-10 py-20 text-white">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-20 text-white">
                         <div className="space-y-4">
                             <RiContactsBookLine className="text-4xl text-lime-400"></RiContactsBookLine>
                             <h2 className="text-[24px] font-semibold text-yellow-100">Long Term Contact</h2>

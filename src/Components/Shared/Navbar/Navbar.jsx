@@ -12,7 +12,7 @@ const Navbar = ()=>{
     </>
     return(
         <div className="bg-slate-900 fixed top-0 left-0 z-20 w-full ">
-            <div className="max-w-7xl mx-8 lg:mx-auto navbar">
+            <div className="max-w-7xl mx-8 px-10 lg:px-0 lg:mx-auto navbar">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-white lg:hidden">

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 const MonthlyAnnual = ()=>{
     return(
         <div className="py-10 bg-slate-800">
-            <div className="max-w-7xl mx-auto">
-                <div className="flex gap-10">
-                    <div className="flex gap-8">
-                        <div className="w-[300px] h-[500px]
+            <div className="max-w-7xl mx-auto lg:mx-auto">
+                <div className="flex flex-col lg:flex-row gap-10">
+                    <div className="flex flex-col lg:flex-row gap-8">
+                        <div className="w-[full] md: lg:w-[300px] h-[500px]
                         rounded-md my-8 py-[100px] px-10 bg-gray-700">
                             <div className="text-center">
                                  <h2 className="text-white text-[25px]">Day Pass</h2>
@@ -33,7 +33,7 @@ const MonthlyAnnual = ()=>{
                                     rounded-md text-black">Get Started</Link>
                             </div>
                         </div>
-                        <div className="w-[300px] h-[550px] bg-white py-[40px] px-10">
+                        <div className="w-[100%] lg:w-[300px] h-[550px] bg-white py-[40px] px-10">
                         <div className="text-center">
                                  <h2 className="text-white text-[25px]">Month to Month</h2>
                                  <p className="text-lime-300">
@@ -68,7 +68,7 @@ const MonthlyAnnual = ()=>{
                             </div>
                         </div>
                     </div>
-                    <div className="">
+                    <div className="mx-8">
                         <h2 className="text-white mb-10 text-[26px]">Our Member</h2>
                         <div className="text-white">
                             <h2 className="mb-10 text-[26px]">From Punch Pass to Monthly or Annual</h2>

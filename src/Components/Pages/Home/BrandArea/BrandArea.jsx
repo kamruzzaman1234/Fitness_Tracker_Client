@@ -2,7 +2,7 @@ const BrandArea = ()=>{
     return(
         <div className="py-10 bg-gray-700">
             <div className="max-w-7xl mx-auto">
-                <div className="grid grid-cols-5 gap-2">
+                <div className="grid grid-cols-2 lg:grid-cols-5 gap-2">
                     <div>
                         <div className="mb-6">
                             <h2 className="text-[24px] text-white">Recommended <br /> Brands</h2>

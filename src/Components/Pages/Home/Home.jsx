@@ -3,6 +3,7 @@ import Banner from "./Banner/Banner";
 import BodyIndex from "./BodyIndex/BodyIndex";
 import BrandArea from "./BrandArea/BrandArea";
 import ExerciseDetails from "./ExerciseDetails/ExerciseDetails";
+import ExtraArea from "./ExtraArea/ExtraArea";
 import GymServices from "./GymServices/GymServices";
 import GymTime from "./GymTime/GymTime";
 import MonthlyAnnual from "./MonthlyAnnual/MonthlyAnnual";
@@ -28,6 +29,7 @@ const Home = ()=>{
             <GymServices></GymServices>
             <TestomonialCard></TestomonialCard>
             <BrandArea></BrandArea>
+            <ExtraArea></ExtraArea>
         </div>
     )
 }

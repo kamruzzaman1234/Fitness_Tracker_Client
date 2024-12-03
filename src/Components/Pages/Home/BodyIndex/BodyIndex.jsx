@@ -5,9 +5,9 @@ import ProgressBar from "./ProgressBar";
 const BodyIndex = ()=>{
     return(
         <div className="py-10">
-            <div className="max-w-7xl mx-auto">
-                <div className="flex gap-8">
-                    <div className="w-[30%]">
+            <div className="max-w-7xl mx-8 lg:mx-auto">
+                <div className="flex flex-col lg:flex-row gap-8">
+                    <div className=" w-[100%] lg:w-[30%]">
                         <div>
                             <h2 className="text-[26px] text-white mb-10">Body Mass index</h2>
                             <p className="text-white">Body Mass Index (BMI) is a measure of body
@@ -32,7 +32,7 @@ const BodyIndex = ()=>{
                         </div>
                         </div>
                     </div>
-                    <div className="w-[70%]">
+                    <div className="w-[100%] lg:w-[70%]">
                         <div className="grid grid-cols-1">
                             <ProgressBar></ProgressBar>
                         </div>

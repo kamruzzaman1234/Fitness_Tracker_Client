@@ -23,7 +23,7 @@ const VideoClasses = () => {
 
   return (
     <div className="py-10 bg-slate-700">
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Video Section */}
         <div className="relative flex justify-center items-center">
           <video
@@ -44,7 +44,7 @@ const VideoClasses = () => {
           </button>
         </div>
         {/* Second Column */}
-        <div className="mx-20">
+        <div className="mx-8 lg:mx-20 mt-8 lg:mt-0">
           <h2 className="text-[26px] text-white font-bold mb-10">
             Explore Our Top Fat Burning Classes
           </h2>
@@ -55,7 +55,7 @@ const VideoClasses = () => {
                   key={index}
                   to="#"
                   onClick={() => setActiveButton(index)}
-                  className={`px-4 py-2 font-bold text-white border-2 rounded 
+                  className={` px-3 lg:px-4 py-2 font-medium lg:font-bold text-white border-2 rounded 
                 ${
                   activeButton === index
                     ? "bg-green-400 border-green-400"
