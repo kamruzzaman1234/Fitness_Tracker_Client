@@ -8,6 +8,8 @@ import Home from './Components/Pages/Home/Home';
 import RegisterPage from './Components/Pages/RegisterPage/RegisterPage';
 import UserLogin from './Components/Pages/LogInPage/UserLogin';
 import AuthProvider from './Provider/AuthProvider';
+import UserProfile from './Components/Pages/UserProfile/UserProfile';
+import EditProfile from './Components/Pages/EditProfile/EditProfile';
 const router = createBrowserRouter([
   {
     path:"/",
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
       {
         path:"userLogin",
         element: <UserLogin></UserLogin>
+      },
+      {
+        path:"userProfile",
+        element: <UserProfile></UserProfile>
+      },
+      {
+        path:"editProfile",
+        element: <EditProfile></EditProfile>
       }
     ]
 

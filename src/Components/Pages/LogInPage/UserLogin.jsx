@@ -1,19 +1,36 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa6";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import auth from "../../../Firebase/Firebase.config";
+import { useLocation, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
 const UserLogin = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+  const {logIn, logOut} = useContext(AuthContext)
+  const gProvider = new GoogleAuthProvider();
+  const location = useLocation()
+  const navigate = useNavigate()
+  const from = location.state?.from?.pathname || "/"
+
 
   const [errors, setErrors] = useState({});
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const handleGoogle = () => {
+    logOut(auth);
+    signInWithPopup(auth, gProvider)
+      .then(result => {
+        const user = result.user;
+        console.log("User Logged In:", user);
+        toast("Login in Successfully")
+        navigate(from,{ replace: true})
+      })
+      .catch(error => {
+        console.error("Error in Google Sign-In:", error.message);
+      });
   };
+
+
 
   const validateForm = () => {
     const newErrors = {};
@@ -26,28 +43,27 @@ const UserLogin = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      Swal.fire({
-        icon: "success",
-        title: "Login Successful",
-        text: "Welcome back to Fitness Tracker!",
-      });
-      setFormData({ email: "", password: "" });
-    }
+    e.preventDefault()
+    const form = e.target 
+    const email = form.email.value 
+    const password = form.password.value 
+    console.log(email, password)
+    logIn(email, password)
+    .then(result=>{
+      const user = result.user
+      console.log(user)
+      toast("Login Successfully");
+      navigate(from,{ replace: true})
+    })
+    .catch(error=> console.log(error.message))
+    
   };
 
-  const handleGoogleLogin = () => {
-    Swal.fire({
-      icon: "info",
-      title: "Google Login",
-      text: "Redirecting to Google authentication...",
-    });
-    // Add Google authentication logic here
-  };
+  
 
   return (
     <div className="min-h-screen flex items-center py-20 justify-center bg-gradient-to-tl from-gray-900 via-purple-800 to-gray-900 relative">
+      <ToastContainer></ToastContainer>
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-green-400 opacity-20 blur-3xl"></div>
       <div className="absolute top-20 right-10 w-96 h-96 rounded-full bg-gradient-to-t from-pink-400 to-orange-300 opacity-40 blur-2xl"></div>
@@ -70,8 +86,8 @@ const UserLogin = () => {
               type="email"
               id="email"
               name="email"
-              value={formData.email}
-              onChange={handleInputChange}
+              
+            
               className={`w-full px-5 py-3 rounded-xl bg-gray-800/40 text-gray-100 focus:ring focus:ring-blue-500 transition ${
                 errors.email ? "border-red-500 border" : "border-transparent"
               }`}
@@ -88,8 +104,8 @@ const UserLogin = () => {
               type="password"
               id="password"
               name="password"
-              value={formData.password}
-              onChange={handleInputChange}
+              
+              
               className={`w-full px-5 py-3 rounded-xl bg-gray-800/40 text-gray-100 focus:ring focus:ring-blue-500 transition ${
                 errors.password ? "border-red-500 border" : "border-transparent"
               }`}
@@ -113,13 +129,14 @@ const UserLogin = () => {
 
         {/* Google Login Button */}
         <button
-          onClick={handleGoogleLogin}
-          className="mt-6 flex items-center gap-4 justify-center w-full py-3 bg-white text-gray-900 rounded-xl shadow-lg hover:bg-gray-100 transition"
-        >
-            <FaGoogle className="text-pink-500"></FaGoogle>
-              
-          Login with Google
-        </button>
+  onClick={handleGoogle}
+  className="mt-6 flex items-center gap-4 justify-center w-full py-3 px-6 bg-gradient-to-r from-indigo-500 to-cyan-500 text-white font-medium rounded-lg shadow-md hover:shadow-lg hover:from-indigo-600 hover:to-cyan-600 transition-transform transform hover:scale-105 active:scale-95"
+>
+  <FaGoogle className="text-indigo-500 text-xl bg-white p-2 rounded-full shadow-lg"></FaGoogle>
+  <span className="text-lg">Login with Google</span>
+</button>
+
+
 
         <p className="text-center text-gray-300 mt-6 text-sm">
           Don't have an account?{" "}

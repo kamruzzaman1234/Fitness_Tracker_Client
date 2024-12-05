@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import { toast, ToastContainer } from "react-toastify";
 
 const RegisterPage = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
-
+  const {createUser} = useContext(AuthContext)
+  
   const [errors, setErrors] = useState({});
 
   const handleInputChange = (e) => {
@@ -33,19 +30,30 @@ const RegisterPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      Swal.fire({
-        icon: "success",
-        title: "Registration Successful",
-        text: "Welcome to Fitness Tracker!",
-      });
-      setFormData({ name: "", email: "", password: "", confirmPassword: "" });
-    }
+    const form = e.target 
+    const name = form.name.value 
+    const email = form.email.value 
+    const password = form.password.value 
+    const confirmPassword = form.confirmPassword.value 
+    console.log(name, email, password, confirmPassword)
+
+    createUser(email, password)
+    .then(result=>{
+      const user = result.user
+      if (user.insertedId)
+        toast("Register Successfully");
+      form.reset();
+    })
+    .catch(error => console.log(error.message));
+    
+    
+    
   };
 
   return (
     <div className="min-h-screen py-20 flex items-center justify-center bg-gradient-to-tl from-gray-900 via-purple-800 to-gray-900 relative">
       {/* Background Effects */}
+      <ToastContainer />
       <div className="absolute inset-0 bg-gradient-to-br from-purple-700 to-pink-500 opacity-20 blur-3xl"></div>
       <div className="absolute top-20 right-10 w-96 h-96 rounded-full bg-gradient-to-t from-green-300 to-blue-500 opacity-30 blur-2xl"></div>
       <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-gradient-to-t from-pink-400 to-orange-300 opacity-40 blur-2xl"></div>
@@ -68,7 +76,7 @@ const RegisterPage = () => {
               type="text"
               id="name"
               name="name"
-              value={formData.name}
+              
               onChange={handleInputChange}
               className={`w-full px-5 py-3 rounded-xl bg-gray-800/40 text-gray-100 focus:ring focus:ring-pink-500 transition ${
                 errors.name ? "border-red-500 border" : "border-transparent"
@@ -86,7 +94,7 @@ const RegisterPage = () => {
               type="email"
               id="email"
               name="email"
-              value={formData.email}
+              
               onChange={handleInputChange}
               className={`w-full px-5 py-3 rounded-xl bg-gray-800/40 text-gray-100 focus:ring focus:ring-pink-500 transition ${
                 errors.email ? "border-red-500 border" : "border-transparent"
@@ -104,7 +112,7 @@ const RegisterPage = () => {
               type="password"
               id="password"
               name="password"
-              value={formData.password}
+              
               onChange={handleInputChange}
               className={`w-full px-5 py-3 rounded-xl bg-gray-800/40 text-gray-100 focus:ring focus:ring-pink-500 transition ${
                 errors.password ? "border-red-500 border" : "border-transparent"
@@ -122,7 +130,7 @@ const RegisterPage = () => {
               type="password"
               id="confirmPassword"
               name="confirmPassword"
-              value={formData.confirmPassword}
+              
               onChange={handleInputChange}
               className={`w-full px-5 py-3 rounded-xl bg-gray-800/40 text-gray-100 focus:ring focus:ring-pink-500 transition ${
                 errors.confirmPassword ? "border-red-500 border" : "border-transparent"

@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
 import { GiMuscleUp } from "react-icons/gi";
+import { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
+  const {user, logOut} = useContext(AuthContext)
+  const handleLogOut = ()=>{
+    logOut()
+    .then(()=>{})
+    .catch(error=> console.log(error.message))
+  }
   const navItems = (
     <>
       <li><Link to="/">Home</Link></li>
@@ -10,8 +18,19 @@ const Navbar = () => {
       <li><Link to="/dashBoard">Dashboard</Link></li>
       <li><Link to="/forumPage">Forums Pages</Link></li>
       <li>
-        <details>
-          <summary className="cursor-pointer">Login</summary>
+        {user ? <>
+          <details>
+            <summary>
+              Details
+            </summary>
+            <ul className="space-y-2">
+                <li><Link to="/userProfile" className="bg-green-400 py-1 text-white text-[10px]">Profile</Link></li>
+                <li><Link to="/editProfile" className="py-1 text-white bg-green-400 text-[10px]">Update</Link></li>
+                <li><Link to="" onClick={handleLogOut} className="py-1 bg-red-500 text-white text-[10px]">Log Out</Link></li>
+            </ul>
+          </details>
+        </> :  <details>
+           <summary className="cursor-pointer">Login</summary>
           <ul className="bg-gray-800 p-2 rounded-lg shadow-lg">
             <li className="bg-gray-900 hover:bg-gray-700 text-white rounded-lg my-1">
               <Link className="px-8 py-2 block" to="/userLogin">User Login</Link>
@@ -23,13 +42,14 @@ const Navbar = () => {
               <Link className="px-8 py-2 block" to="/admin">Admin Login</Link>
             </li>
           </ul>
-        </details>
+        </details>}
+       
       </li>
     </>
   );
 
   return (
-    <div className="bg-slate-900 fixed top-0 left-0 z-20 w-full">
+    <div className="bg-white fixed top-0 left-0 z-20 w-full">
       <div className="max-w-7xl mx-8 px-10 lg:px-0 lg:mx-auto navbar">
         <div className="navbar-start">
           <div className="dropdown">
@@ -49,22 +69,24 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm z-10 dropdown-content font-medium text-white bg-gray-800 p-2 rounded-lg shadow-lg">
+              className="menu menu-sm z-10 dropdown-content font-medium text-black bg-gray-900 p-2 rounded-lg shadow-lg">
               {navItems}
             </ul>
           </div>
-          <Link to="/" className="flex gap-2 items-center text-lg text-white">
+          <Link to="/" className="lg:flex gap-2 items-center hidden text-lg text-black">
             <GiMuscleUp className="text-3xl font-bold" /> Fitness Tracker
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu z-10 menu-horizontal px-1 font-medium text-white">
+          <ul className="menu z-10 menu-horizontal px-1 font-medium text-black">
             {navItems}
           </ul>
         </div>
         <div className="avatar navbar-end">
           <div className="w-14 rounded-full border-4 border-white">
-            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="User" />
+            {user ? <img src={user?.photoURL}/> : <img 
+            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="User" />}
+            
           </div>
         </div>
       </div>
