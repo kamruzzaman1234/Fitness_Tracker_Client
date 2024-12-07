@@ -1,0 +1,105 @@
+[
+    {
+       
+        "trainer": {
+          "name": "John Doe",
+          "image": "https://i.ibb.co.com/CHxjf1P/pexels-jonathanborba-14037022.jpg",
+          "experience": "5 years",
+          "specialization": ["Yoga", "Cardio Fitness", "Strength Training"],
+          "institute": "FitLife Gym",
+          "members": 120,
+          "facility": "World-class equipment, personal trainers, and nutrition guidance."
+        },
+        "categories": [
+          {
+            "category_name": "Active Adults",
+            "price": 2000,
+            "details": "Designed for adults looking to maintain an active lifestyle.",
+            "time_schedule": {
+              "morning": "6:00 AM - 8:00 AM",
+              "evening": "6:00 PM - 8:00 PM"
+            },
+            "video_classes": [
+              {
+                "title": "Morning Warm-Up",
+                "url": "https://www.youtube.com/watch?v=cmple9fw65w",
+                "description": "Start your day with energy and flexibility.",
+                "duration": "20 minutes"
+              },
+              {
+                "title": "Evening Relaxation",
+                "url": "https://www.youtube.com/watch?v=iqcAWup2aCE",
+                "description": "Calm your mind and body after a busy day.",
+                "duration": "30 minutes"
+              }
+            ]
+          },
+          {
+            "category_name": "Yoga Fitness",
+            "price": 1800,
+            "details": "Focus on flexibility, balance, and inner peace.",
+            "time_schedule": {
+              "morning": "7:00 AM - 9:00 AM",
+              "evening": "5:00 PM - 7:00 PM"
+            },
+            "video_classes": [
+              {
+                "title": "Beginner Yoga",
+                "url": "https://www.youtube.com/watch?v=JogJf_8MuN8",
+                "description": "Learn the basics of yoga with simple poses.",
+                "duration": "25 minutes"
+              },
+              {
+                "title": "Advanced Yoga Flow",
+                "url": "https://www.youtube.com/watch?v=higAEnYNl-k",
+                "description": "Challenge yourself with advanced yoga sequences.",
+                "duration": "40 minutes"
+              }
+            ]
+          },
+          {
+            "category_name": "Cardio Fitness",
+            "price": 2200,
+            "details": "Improve endurance and cardiovascular health.",
+            "time_schedule": {
+              "morning": "6:30 AM - 8:30 AM",
+              "evening": "6:30 PM - 8:30 PM"
+            },
+            "video_classes": [
+              {
+                "title": "High-Intensity Cardio",
+                "url": "https://www.youtube.com/watch?v=XGtjACeyHtc",
+                "description": "Burn calories with this intense cardio session.",
+                "duration": "30 minutes"
+              },
+              {
+                "title": "Low-Impact Cardio",
+                "url": "https://www.youtube.com/watch?v=ao3pptKTipQ",
+                "description": "Perfect for beginners or recovery days.",
+                "duration": "20 minutes"
+              }
+            ]
+          }
+        ],
+        "gym_schedule": {
+          "age_group": {
+            "kids": {
+              "morning": "8:00 AM - 9:00 AM",
+              "afternoon": "3:00 PM - 4:00 PM"
+            },
+            "adults": {
+              "morning": "6:00 AM - 8:00 AM",
+              "evening": "6:00 PM - 8:00 PM"
+            }
+          }
+        },
+        "facilities": [
+          "Free Wi-Fi",
+          "Personal Lockers",
+          "Shower Area",
+          "Dietary Consultation",
+          "Parking Space"
+        ]
+      }
+      
+]

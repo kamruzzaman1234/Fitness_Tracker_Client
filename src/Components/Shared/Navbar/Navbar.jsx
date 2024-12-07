@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { GiMuscleUp } from "react-icons/gi";
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import { FaCartArrowDown } from "react-icons/fa";
 
 const Navbar = () => {
   const {user, logOut} = useContext(AuthContext)
@@ -16,6 +17,11 @@ const Navbar = () => {
       <li><Link to="/allTrainer">All Trainer</Link></li>
       <li><Link to="/allClasses">All Classes</Link></li>
       <li><Link to="/dashBoard">Dashboard</Link></li>
+      <li><Link to="/" className="">
+      <button className="btn">
+      <FaCartArrowDown></FaCartArrowDown>
+      <div className="badge badge-secondary">+0</div>
+      </button></Link></li>
       <li><Link to="/forumPage">Forums Pages</Link></li>
       <li>
         {user ? <>

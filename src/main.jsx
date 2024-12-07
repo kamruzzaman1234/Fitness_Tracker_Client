@@ -10,6 +10,10 @@ import UserLogin from './Components/Pages/LogInPage/UserLogin';
 import AuthProvider from './Provider/AuthProvider';
 import UserProfile from './Components/Pages/UserProfile/UserProfile';
 import EditProfile from './Components/Pages/EditProfile/EditProfile';
+import AllTrainer from './Components/Pages/All_Triner/AllTrainer';
+import PrivetRouter from './PrivetRouter/PrivetRouter';
+import DetailsTrainer from './Components/Pages/All_Triner/DetailsTrainer/DetailsTrainer';
+import BookingPage from './Components/Pages/BookingPage/BookingPage';
 const router = createBrowserRouter([
   {
     path:"/",
@@ -34,7 +38,21 @@ const router = createBrowserRouter([
       {
         path:"editProfile",
         element: <EditProfile></EditProfile>
+      },
+      {
+        path:"allTrainer",
+        element: <AllTrainer></AllTrainer>
+      },
+      {
+        path:"detailsTrainer/:id",
+        element:<PrivetRouter><DetailsTrainer></DetailsTrainer></PrivetRouter>
+        
+      },
+      {
+        path:"booking/:id",
+        element: <PrivetRouter><BookingPage></BookingPage></PrivetRouter>
       }
+      
     ]
 
   },
